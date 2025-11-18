@@ -1,0 +1,77 @@
+[
+    {
+        "line": 2,
+        "elements": [
+            {
+                "start_timestamp": "2025-11-18T03:40:00.114Z",
+                "line": 4,
+                "name": "Login using data from Excel",
+                "description": "",
+                "id": "login-to-application;login-using-data-from-excel",
+                "type": "scenario",
+                "keyword": "Scenario",
+                "steps": [
+                    {
+                        "result": {
+                            "duration": 47206963300,
+                            "status": "passed"
+                        },
+                        "line": 5,
+                        "name": "user opens login page",
+                        "match": {
+                            "location": "com.stepDefinitionTestNG.Steps.user_opens_login_page()"
+                        },
+                        "keyword": "Given "
+                    },
+                    {
+                        "result": {
+                            "duration": 3989400,
+                            "status": "passed"
+                        },
+                        "line": 6,
+                        "name": "user logs in with username \"Atul\" and password \"123\"",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "val": "\"Atul\"",
+                                    "offset": 27
+                                },
+                                {
+                                    "val": "\"123\"",
+                                    "offset": 47
+                                }
+                            ],
+                            "location": "com.stepDefinitionTestNG.Steps.user_logs_in_with_username_and_password(java.lang.String,java.lang.String)"
+                        },
+                        "keyword": "When "
+                    },
+                    {
+                        "result": {
+                            "duration": 996200,
+                            "status": "passed"
+                        },
+                        "line": 7,
+                        "name": "login should be validated for \"TC001\"",
+                        "match": {
+                            "arguments": [
+                                {
+                                    "val": "\"TC001\"",
+                                    "offset": 30
+                                }
+                            ],
+                            "location": "com.stepDefinitionTestNG.Steps.login_should_be_validated_for(java.lang.String)"
+                        },
+                        "keyword": "Then "
+                    }
+                ]
+            }
+        ],
+        "name": "Login to application",
+        "description": "",
+        "id": "login-to-application",
+        "keyword": "Feature",
+        "uri": "file:src/test/resources/features/login.feature",
+        "tags": [
+        ]
+    }
+]
