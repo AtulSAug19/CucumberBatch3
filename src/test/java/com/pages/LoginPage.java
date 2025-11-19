@@ -1,27 +1,25 @@
 package com.pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
-public class LoginPage {
-
-	WebDriver driver;
+public class LoginPage extends BasePage {
 	
-	@FindBy(id = "username")
+	@FindBy(name = "username")
 	WebElement usernameInput;
 	
-	@FindBy(id = "password")
+	@FindBy(name = "password")
 	WebElement passwordInput;
 	
-	@FindBy(id = "login")
+	@FindBy(xpath = "//button[@type='submit']")
 	WebElement loginBtn;
-
-	public LoginPage(WebDriver driver) {
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-	}
+	
+	@FindBy(xpath="//h5[text()='Login']")
+	WebElement loginTitle;
+	
+	@FindBy(xpath="//span[text()='Dashboard']")
+	WebElement dashboardLink;
 
 	public void enterUsername(String user) {
 		usernameInput.clear();
@@ -35,6 +33,16 @@ public class LoginPage {
 
 	public void clickLogin() {
 		loginBtn.click();
+	}
+	
+	public void verifyLoginPage()
+	{
+		Assert.assertTrue(loginTitle.isDisplayed());
+	}
+	
+	public void verifyDashboardPage()
+	{
+		Assert.assertTrue(dashboardLink.isDisplayed(),"Dashboard not displayed");
 	}
 
 }
