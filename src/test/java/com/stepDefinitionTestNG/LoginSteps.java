@@ -1,5 +1,7 @@
 package com.stepDefinitionTestNG;
 
+import com.Parameters.ExcelReader;
+import com.Parameters.PropertyReader;
 import com.pages.BasePage;
 import com.pages.LoginPage;
 
@@ -10,6 +12,7 @@ import io.cucumber.java.en.When;
 public class LoginSteps {
 	
 	LoginPage login = new LoginPage();
+	ExcelReader excel = new ExcelReader(PropertyReader.get("TestDataPath"),PropertyReader.get("TestDataSheetName"));
 	
 	@Given("fixture is loaded")
 	public void fixture_is_loaded() {
@@ -22,11 +25,11 @@ public class LoginSteps {
 	}
 	@When("enter username in username field")
 	public void enter_username_in_username_field() {
-	    login.enterUsername(BasePage.data.get(0).get("Username"));
+	    login.enterUsername(excel.getCellData(1,"Username"));
 	}
 	@When("enter password in password field")
 	public void enter_password_in_password_field() {
-	    login.enterPassword(BasePage.data.get(0).get("Password"));
+		  login.enterPassword(excel.getCellData(1,"Password"));
 	}
 	@When("Click on Login button")
 	public void click_on_login_button() {

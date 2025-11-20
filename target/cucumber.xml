@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="21.045" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Verify login functionality for OrangeHRM application" name="Verify if admin can login" time="20.612">
+<testsuite name="Cucumber" time="119.702" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Verify all menu items" name="When user click on menu items the all submenu items should be displayed" time="118.494">
 <system-out><![CDATA[
 Given fixture is loaded.....................................................passed
 When user navigate to login page............................................passed
-Then user enter credentials and login.......................................passed
+When enter username in username field.......................................passed
+When enter password in password field.......................................passed
+When Click on Login button..................................................passed
+Then Dashboard page should be displayed.....................................passed
+Given user navigate to Admin page...........................................passed
+Then all below menu items gets displayed....................................passed
+When user click on User Management..........................................passed
+Then Users should be displayed..............................................passed
+And user click on Job.......................................................passed
+Then all below sub menu items gets displayed................................passed
 ]]></system-out>
 </testcase>
 </testsuite>
