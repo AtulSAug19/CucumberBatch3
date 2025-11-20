@@ -3,7 +3,7 @@
 <suite name="Cucumber Suite">
   <test thread-count="5" name="Cucumber Test">
 	  <classes>
-		  <class name="com.runner.TestRunnerParallelTest.java"></class>
+		  <class name="com.runner.TestRunnerTestNG"></class>
 	  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

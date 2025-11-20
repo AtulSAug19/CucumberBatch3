@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="31.511" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Verify login functionality for OrangeHRM application" name="Verify if admin can login" time="31.055">
+<testsuite name="Cucumber" time="21.045" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Verify login functionality for OrangeHRM application" name="Verify if admin can login" time="20.612">
 <system-out><![CDATA[
 Given fixture is loaded.....................................................passed
 When user navigate to login page............................................passed
