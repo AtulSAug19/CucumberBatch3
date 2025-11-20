@@ -114,9 +114,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.1.2</version>
 				<configuration>
-					<suiteXmlFiles>
+					<!-- Use below code for TestNG-->
+				<suiteXmlFiles>
 						<suiteXmlFile>./testng.xml</suiteXmlFile>
-						<!-- Not using TestNG XML; Cucumber runs via runner -->
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
