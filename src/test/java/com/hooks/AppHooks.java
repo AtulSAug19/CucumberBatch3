@@ -2,6 +2,7 @@ package com.hooks;
 
 import com.Parameters.PropertyReader;
 import com.setup.BaseSteps;
+import com.utility.ScreenshotUtil;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -32,7 +33,11 @@ public class AppHooks {
 	    }
 
 	@After
-	public void tearDown() {
+	public void tearDown(Scenario scenario) {
+		if(scenario.isFailed())
+		{
+			ScreenshotUtil.take(scenario.getSourceTagNames().iterator().next().toString());
+		}
 		BaseSteps.quitDriver();
 	}
 

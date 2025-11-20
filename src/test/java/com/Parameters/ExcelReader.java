@@ -140,15 +140,26 @@ public class ExcelReader {
 		return dataList;
 	}
 
-	public static Map<String, String> getRowByTestCaseID(String excelPath, String sheetName, String testCaseID) {
-		List<Map<String, String>> all = getData(excelPath, sheetName);
-		for (Map<String, String> row : all) {
-			String testID = row.get("TestCaseID");
+	public static Map<String, String> getGlobalRow(String excelPath, String sheetName) {
+	    List<Map<String, String>> globalData = getData(excelPath, sheetName);
+	    return globalData.get(1);
+	}
+	
+	public static List<Map<String, String>> getRowByTestCaseID(String excelPath, String sheetName, String testCaseID) {
+		List<Map<String, String>> allRows = getData(excelPath, sheetName);
+		List<Map<String, String>> matchingRows = new ArrayList<>();
+		
+		if (allRows == null || allRows.isEmpty()) {
+	        return matchingRows;
+	    }
+		
+		for (Map<String, String> row : allRows) {
+			String testID = row.getOrDefault("TestCaseID","").trim();
 			if (testID != null && testID.equalsIgnoreCase(testCaseID)) {
-				return row;
+				matchingRows.add(row);
 			}
 		}
-		return null;
+		return matchingRows;
 	}
 
 	public static void writeResult(String excelPath, String sheetName, String tagName, String columnName,

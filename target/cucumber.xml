@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="Cucumber" time="37.18" tests="1" skipped="0" failures="0" errors="0">
-<testcase classname="Verify login functionality for OrangeHRM application" name="User should be able to login when enter correct credential" time="36.51">
+<testsuite name="Cucumber" time="31.511" tests="1" skipped="0" failures="0" errors="0">
+<testcase classname="Verify login functionality for OrangeHRM application" name="Verify if admin can login" time="31.055">
 <system-out><![CDATA[
 Given fixture is loaded.....................................................passed
-Given user navigate to login page...........................................passed
-When enter username in username field.......................................passed
-And enter password in password field........................................passed
-And Click on Login button...................................................passed
-Then Dashboard page should be displayed.....................................passed
+When user navigate to login page............................................passed
+Then user enter credentials and login.......................................passed
 ]]></system-out>
 </testcase>
 </testsuite>

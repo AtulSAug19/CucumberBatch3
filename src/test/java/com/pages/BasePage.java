@@ -1,6 +1,7 @@
 package com.pages;
 
 import java.time.Duration;
+import java.util.List;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
@@ -19,7 +20,7 @@ public class BasePage {
 
 	protected WebDriver driver;
 	private WebDriverWait wait;
-	public static Map<String, String> data;
+	public static List<Map<String, String>> data;
 
 	public BasePage() {
 		this.driver = BaseSteps.getDriver();
@@ -42,6 +43,10 @@ public class BasePage {
 
 	protected void waitForVisibility(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));
+	}
+	
+	protected void waitForClickable(WebElement element) {
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 
 	protected void click(WebElement element) {

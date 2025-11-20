@@ -7,7 +7,7 @@ import io.cucumber.junit.CucumberOptions;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features = { "src/test/resources/features/OrangeHRMLogin.feature" }, 
-glue = { "com.stepDefinitionTestNG","com.hooks"},plugin = {
+glue = { "com.stepDefinitionTestNG","com.hooks"},tags="@TC001",plugin = {
 		"pretty",
 		"html:target/cucumber-report.html",
         "json:target/cucumber.json",
